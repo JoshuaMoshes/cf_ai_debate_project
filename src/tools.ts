@@ -2,12 +2,12 @@
  * Tool definitions for the AI chat agent
  * Tools can either require human confirmation or execute automatically
  */
-import { tool, type ToolSet } from "ai";
-import { z } from "zod/v3";
 
-import type { Chat } from "./server";
 import { getCurrentAgent } from "agents";
 import { scheduleSchema } from "agents/schedule";
+import { type ToolSet, tool } from "ai";
+import { z } from "zod/v3";
+import type { Chat } from "./server";
 
 /**
  * Weather information tool that requires human confirmation

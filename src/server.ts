@@ -1,21 +1,21 @@
+import { openai } from "@ai-sdk/openai";
 import { routeAgentRequest, type Schedule } from "agents";
 
-import { getSchedulePrompt } from "agents/schedule";
-
 import { AIChatAgent } from "agents/ai-chat-agent";
+import { getSchedulePrompt } from "agents/schedule";
 import {
+  convertToModelMessages,
+  createUIMessageStream,
+  createUIMessageStreamResponse,
   generateId,
-  streamText,
   type StreamTextOnFinishCallback,
   stepCountIs,
-  createUIMessageStream,
-  convertToModelMessages,
-  createUIMessageStreamResponse,
+  streamText,
   type ToolSet
 } from "ai";
-import { openai } from "@ai-sdk/openai";
-import { processToolCalls, cleanupMessages } from "./utils";
-import { tools, executions } from "./tools";
+import { executions, tools } from "./tools";
+import { cleanupMessages, processToolCalls } from "./utils";
+
 // import { env } from "cloudflare:workers";
 
 const model = openai("gpt-4o-2024-11-20");

@@ -1,30 +1,29 @@
 /** biome-ignore-all lint/correctness/useUniqueElementIds: it's alright */
-import { useEffect, useState, useRef, useCallback, use } from "react";
-import { useAgent } from "agents/react";
-import { isToolUIPart } from "ai";
-import { useAgentChat } from "agents/ai-react";
+
 import type { UIMessage } from "@ai-sdk/react";
-import type { tools } from "./tools";
-
-// Component imports
-import { Button } from "@/components/button/Button";
-import { Card } from "@/components/card/Card";
-import { Avatar } from "@/components/avatar/Avatar";
-import { Toggle } from "@/components/toggle/Toggle";
-import { Textarea } from "@/components/textarea/Textarea";
-import { MemoizedMarkdown } from "@/components/memoized-markdown";
-import { ToolInvocationCard } from "@/components/tool-invocation-card/ToolInvocationCard";
-
 // Icon imports
 import {
   Bug,
   Moon,
-  Robot,
-  Sun,
-  Trash,
   PaperPlaneTilt,
-  Stop
+  Robot,
+  Stop, 
+  Sun,
+  Trash
 } from "@phosphor-icons/react";
+import { useAgentChat } from "agents/ai-react";
+import { useAgent } from "agents/react";
+import { isToolUIPart } from "ai";
+import { use, useCallback, useEffect, useRef, useState } from "react";
+import { Avatar } from "@/components/avatar/Avatar";
+// Component imports
+import { Button } from "@/components/button/Button";
+import { Card } from "@/components/card/Card";
+import { MemoizedMarkdown } from "@/components/memoized-markdown";
+import { Textarea } from "@/components/textarea/Textarea";
+import { Toggle } from "@/components/toggle/Toggle";
+import { ToolInvocationCard } from "@/components/tool-invocation-card/ToolInvocationCard";
+import type { tools } from "./tools";
 
 // List of tools that require human confirmation
 // NOTE: this should match the tools that don't have execute functions in tools.ts

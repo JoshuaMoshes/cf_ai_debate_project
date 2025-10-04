@@ -8,3 +8,4 @@ This didn't work make sure to include all CORS cases so it never gives CORS poli
 
 Add feature for debate history tracking
 
+Fix error: npm error Missing script: "check"
