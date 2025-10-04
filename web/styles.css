@@ -1,0 +1,72 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: #0b0c10;
+  color: #e5e7eb;
+}
+
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+#setup {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+#log {
+  height: 62vh;
+  overflow: auto;
+  padding: 12px;
+  background: #111827;
+  border-radius: 8px;
+}
+
+#log > div {
+  padding: 10px 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+
+#log > .user {
+  background: #1f2937;
+  text-align: right;
+}
+
+#log > .bot {
+  background: #0f172a;
+}
+
+#log > .system {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+input,
+select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: #e5e7eb;
+  cursor: pointer;
+}

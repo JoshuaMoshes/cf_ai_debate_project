@@ -5,7 +5,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "agents-starter",
-	"main": "src/server.ts",
+	"main": "worker/index.ts",
 	"compatibility_date": "2025-08-03",
 	"compatibility_flags": [
 		"nodejs_compat"
@@ -15,27 +15,32 @@
 		"remote": true
 	},
 	"assets": {
-		"directory": "public"
-	},
-	"durable_objects": {
-		"bindings": [
-			{
-				"name": "Chat",
-				"class_name": "Chat"
-			}
-		]
+		"directory": "web",
+		"binding": "ASSETS"
 	},
 	"migrations": [
 		{
-			"tag": "v1",
-			"new_sqlite_classes": [
+			"tag": "v2",
+			"deleted_classes": [
 				"Chat"
 			]
 		}
 	],
 	"observability": {
 		"enabled": true
-	}
+	},
+	"vectorize": [
+		{
+			"binding": "VECTORIZE",
+			"index_name": "debate-mem-index"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "KV",
+			"id": "cc8bc09bc1ec47f0a909b7f25320833f"
+		}
+	]
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

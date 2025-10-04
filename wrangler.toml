@@ -1,0 +1,33 @@
+name = "ai-debate-coach"
+main = "worker/index.ts"
+compatibility_date = "2025-10-03"
+
+[assets]
+directory = "web"
+binding = "ASSETS"
+
+[ai]
+binding = "AI"
+
+[[vectorize]]
+binding = "MEMVEC"
+index_name = "debate-mem-index"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "cc8bc09bc1ec47f0a909b7f25320833f"
+
+[[durable_objects.bindings]]
+name = "SessionDO"
+class_name = "SessionDO"
+
+[[migrations]]
+tag = "v1"
+new_classes = [ "SessionDO" ]
+
+[[workflows]]
+name = "debateflow"
+class_name = "DebateWorkflow"
+
+[observability.logs]
+enabled = true

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Debate Coach</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <h1>AI Debate Coach</h1>
+    <section id="setup">
+      <input id="topic" placeholder="Topic, e.g., Remote work is better than office" />
+      <select id="stance">
+        <option value="pro">I am PRO</option>
+        <option value="con">I am CON</option>
+      </select>
+      <button id="start">Start debate</button>
+    </section>
+
+    <div id="log" aria-live="polite"></div>
+
+    <form id="chat" hidden>
+      <input id="msg" placeholder="Make your argument..." autocomplete="off" />
+      <button>Send</button>
+    </form>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
